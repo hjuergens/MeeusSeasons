@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.goldenbogen.lib</groupId>
+    <artifactId>datetime.meeus-seasons</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>jar</packaging>
+
+    <name>MeeusSeasons</name>
+    <url>https://github.com/hjuergens/MeeusSeasons</url>
+
+    <description>Class to calculate the season for a given date. It makes heavy use of Meeus' astronomical algorithms.
+    </description>
+
+    <properties>
+        <encoding>UTF-8</encoding>
+        <maven.compiler.source>1.5</maven.compiler.source>
+        <maven.compiler.target>1.5</maven.compiler.target>
+        <site.path>MeeusSeasons</site.path>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>GNU GENERAL PUBLIC LICENSE, Version 3.0</name>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/hjuergens/MeeusSeasons.git</connection>
+        <developerConnection>scm:git:git@github.com:hjuergens/MeeusSeasons.git</developerConnection>
+        <url>http://github.com/hjuergens/MeeusSeasons/</url>
+    </scm>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/MeeusSeasons/issues</url>
+    </issueManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>repo</id>
+            <url>file://${project.basedir}/repo</url>
+        </repository>
+        <snapshotRepository>
+            <id>hjuergens.git.server</id>
+            <url>scm:git:git@github.com:hjuergens/MeeusSeasons.git</url>
+        </snapshotRepository>
+        <site>
+            <id>github</id>
+            <url>scm:git:git://git@github.com/hjuergens/MeeusSeasons.git</url>
+            <!--<url>scm:git:https://github.com/hjuergens/MeeusSeasons.git</url>-->
+        </site>
+        <!--<repository>-->
+            <!--<id>hjuergens.git.server</id>-->
+            <!--<url>scm:git:git@github.com:hjuergens/date-parser.git</url>-->
+        <!--</repository>-->
+    </distributionManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.9.4</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19</version>
+                <configuration>
+                    <parallel>methods</parallel>
+                    <threadCount>4</threadCount>
+                </configuration>
+            </plugin>
+            <plugin>
+                <!-- Deploy the web site -->
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <!-- select the Maven phase in which the plugin will be executed -->
+                        <phase>site</phase> <!-- site-deploy -->
+                        <configuration>
+                            <server>github</server>
+                            <message>Generated site for site-maven-plugin 0.12</message>
+
+                            <!-- Destination directory -->
+                            <path>\${site.path}</path>
+
+                            <merge>true</merge>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>1.9.4</version>
+                <configuration>
+                    <goals>install</goals>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-scm</artifactId>
+                <version>2.10</version>
+            </extension>
+            <extension>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-manager-plexus</artifactId>
+                <version>1.9.2</version>
+            </extension>
+            <extension>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-provider-gitexe</artifactId>
+                <version>1.9.2</version>
+            </extension>
+        </extensions>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.19</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.4</version>
+            </plugin>
+        </plugins>
+    </reporting>
+
+</project>

@@ -16,8 +16,8 @@ public class MeeusSeasonsTest {
 
     /**
      * Equinoxes and Solstices for year 2016
-     * @link http://www.geoastro.de/astro/astroJS/seasons/index.htm
-     * @throws Exception
+     * @see <a href="http://www.geoastro.de/astro/astroJS/seasons/index.htm">http://www.geoastro.de/astro/astroJS/seasons/index.htm</a>
+     * @throws Exception description
      */
     @Test
     public void testGetNorthernHemisphereSeason2016() throws Exception {
@@ -52,8 +52,8 @@ public class MeeusSeasonsTest {
 
     /**
      * Equinoxes and Solstices for year 2017
-     * @link http://www.geoastro.de/astro/astroJS/seasons/index.htm
-     * @throws Exception
+     * @see <a href="http://www.geoastro.de/astro/astroJS/seasons/index.htm">http://www.geoastro.de/astro/astroJS/seasons/index.htm</a>
+     * @throws Exception description
      */
     @Test
     public void testGetNorthernHemisphereSeason2017() throws Exception {

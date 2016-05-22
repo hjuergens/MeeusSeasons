@@ -1,6 +1,6 @@
 package net.goldenbogen.lib.datetime;
 
-import java.io.PrintStream;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
@@ -10,7 +10,7 @@ import java.util.TimeZone;
  * It makes heavy use of Meeus' astronmical algorithms <i>(Title of his book.)</i>.
  * 
  * @author Pierre Goldenbogen <br>
- * @email  pierre [at] goldenbogen [dot] net <br>
+ * email  pierre [at] goldenbogen [dot] net <br>
  * (c) Copyright by Pierre Goldenbogen, 2013
  */
 public class MeeusSeasons {
@@ -22,7 +22,7 @@ public class MeeusSeasons {
 	 *         int = 2: Spring<br>
 	 *         int = 3: Summer<br>
 	 *         int = 4: Autumn
-	 * @throws Exception
+	 * @throws Exception description
 	 */
 	public static int getActualNorthernHemisphereSeason() throws Exception {
 		for (int iSeason = 1; iSeason <= 4; iSeason++) {
@@ -47,7 +47,7 @@ public class MeeusSeasons {
 	/**
 	 * Special implementation of the Math.cos function.
 	 * 
-	 * @param value
+	 * @param value a number
 	 * @return double
 	 */
 	private static double specialCos(double value) {
@@ -297,7 +297,7 @@ public class MeeusSeasons {
 	/**
 	 * Test method to print out what season we actually have.
 	 * 
-	 * @param args
+	 * @param args command line arguments
 	 */
 	public static void main(String[] args) {
 		try {

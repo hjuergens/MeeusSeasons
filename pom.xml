@@ -21,6 +21,7 @@
         <maven.compiler.source>1.5</maven.compiler.source>
         <maven.compiler.target>1.5</maven.compiler.target>
         <site.path>${project.name}</site.path>
+        <github.global.server>github</github.global.server>
     </properties>
 
     <licenses>
@@ -163,7 +164,7 @@
                                 <phase>site</phase>
                                 <configuration>
                                     <server>github</server>
-                                    <message>Generated site for site-maven-plugin 0.12</message>
+                                    <message>Creating site for ${project.version} with site-maven-plugin 0.12</message>
                                     <!-- Destination directory -->
                                     <path>${site.path}</path>
                                     <merge>true</merge>

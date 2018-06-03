@@ -11,9 +11,6 @@ import static org.testng.Assert.assertEquals;
 
 public class MeeusSeasonsTest {
 
-    private final DateFormat formatter =
-            new SimpleDateFormat("EEE, MMM d, ''yy 'at' H:mm z", Locale.ENGLISH);
-
     /**
      * Equinoxes and Solstices for year 2016
      * @see <a href="http://www.geoastro.de/astro/astroJS/seasons/index.htm">http://www.geoastro.de/astro/astroJS/seasons/index.htm</a>
@@ -21,6 +18,8 @@ public class MeeusSeasonsTest {
      */
     @Test
     public void testGetNorthernHemisphereSeason2016() throws Exception {
+        final DateFormat formatter =
+                new SimpleDateFormat("EEE, MMM d, ''yy 'at' H:mm z", Locale.ENGLISH);
 
         assertEquals(getNorthernHemisphereSeason(
                 formatter.parse("Sun, Mar 20, '16 at 4:29 UTC")), 1);// : Winter
@@ -57,6 +56,8 @@ public class MeeusSeasonsTest {
      */
     @Test
     public void testGetNorthernHemisphereSeason2017() throws Exception {
+        final DateFormat formatter =
+                new SimpleDateFormat("EEE, MMM d, ''yy 'at' H:mm z", Locale.ENGLISH);
 
         assertEquals(getNorthernHemisphereSeason(
                 formatter.parse("Mon, Mar 20, '17 at 10:28 UTC")), 1);// : Winter

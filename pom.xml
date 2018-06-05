@@ -76,7 +76,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.3</version>
+                <version>3.0.1</version>
                 <configuration>
                     <minmemory>64m</minmemory>
                     <maxmemory>2g</maxmemory>
@@ -87,7 +87,7 @@
                     <detectLinks>false</detectLinks>
                     <detectOfflineLinks>true</detectOfflineLinks>
                     <linksource>true</linksource>
-                    <additionalparam>-Xdoclint:none</additionalparam>
+                    <!--<additionalJOption>-Xdoclint:none</additionalJOption>-->
                     <detectJavaApiLink>true</detectJavaApiLink>
                     <failOnError>false</failOnError>
                     <links>
@@ -100,6 +100,39 @@
                         <goals>
                             <goal>javadoc</goal>
                             <goal>test-javadoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- code coverage -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.7.8</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- -->
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -143,6 +176,43 @@
                     </reportSet>
                 </reportSets>
             </plugin>
+            <!-- versions-maven-plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.5</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependency-updates-report</report>
+                            <report>plugin-updates-report</report>
+                            <report>property-updates-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <!-- jxr report -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <linkJavadoc>true</linkJavadoc>
+                    <javadocDir>target/site/apidocs</javadocDir>
+            </configuration>
+            </plugin>
+            <!-- jacoco code coverage report -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
         </plugins>
     </reporting>
 
@@ -165,8 +235,6 @@
                                 <configuration>
                                     <server>github</server>
                                     <message>Creating site for ${project.version} with site-maven-plugin 0.12</message>
-                                    <!-- Destination directory -->
-                                    <path>${site.path}</path>
                                     <merge>true</merge>
                                 </configuration>
                             </execution>

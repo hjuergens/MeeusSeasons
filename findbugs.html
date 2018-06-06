@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>MeeusSeasons - Surefire Report</title>
+    <title>MeeusSeasons - FindBugs Bug Detector Report</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
@@ -51,8 +51,8 @@
                           <a href="project-reports.html" title="Project Reports">Project Reports</a>
                     <ul>
                       <li class="none">
-            <strong>Surefire Report</strong>
-          </li>
+                          <a href="surefire-report.html" title="Surefire Report">Surefire Report</a>
+            </li>
                       <li class="none">
                           <a href="apidocs/index.html" title="Javadoc">Javadoc</a>
             </li>
@@ -81,8 +81,8 @@
                           <a href="jacoco/index.html" title="JaCoCo">JaCoCo</a>
             </li>
                       <li class="none">
-                          <a href="findbugs.html" title="FindBugs">FindBugs</a>
-            </li>
+            <strong>FindBugs</strong>
+          </li>
               </ul>
         </li>
           </ul>
@@ -95,103 +95,61 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
-        <script type="text/javascript">
-//<![CDATA[
-function toggleDisplay(elementId) {
- var elm = document.getElementById(elementId + '-error');
- if (elm == null) {
-  elm = document.getElementById(elementId + '-failure');
- }
- if (elm && typeof elm.style != "undefined") {
-  if (elm.style.display == "none") {
-   elm.style.display = "";
-   document.getElementById(elementId + '-off').style.display = "none";
-   document.getElementById(elementId + '-on').style.display = "inline";
-  } else if (elm.style.display == "") {   elm.style.display = "none";
-   document.getElementById(elementId + '-off').style.display = "inline";
-   document.getElementById(elementId + '-on').style.display = "none";
-  } 
- } 
- }
-//]]>
-</script>
+        <div class="section">
+<h2>FindBugs Bug Detector Report<a name="FindBugs_Bug_Detector_Report"></a></h2>
+<p>The following document contains the results of <a class="externalLink" href="http://findbugs.sourceforge.net">FindBugs</a></p>
+<p>FindBugs Version is <i>3.0.1</i></p>
+<p>Threshold is <i>medium</i></p>
+<p>Effort is <i>min</i></p></div>
 <div class="section">
-<h2>Surefire Report<a name="Surefire_Report"></a></h2></div>
-<div class="section">
-<h2>Summary<a name="Summary"></a></h2><a name="Summary"></a>
-<p>[<a href="#Summary">Summary</a>] [<a href="#Package_List">Package List</a>] [<a href="#Test_Cases">Test Cases</a>]</p><br />
-<table border="1" class="bodyTable">
+<h2>Summary<a name="Summary"></a></h2>
+<table border="0" class="bodyTable">
 <tr class="a">
-<th>Tests</th>
-<th>Errors </th>
-<th>Failures</th>
-<th>Skipped</th>
-<th>Success Rate</th>
-<th>Time</th></tr>
+<th>Classes</th>
+<th>Bugs</th>
+<th>Errors</th>
+<th>Missing Classes</th></tr>
 <tr class="b">
-<td>2</td>
+<td>1</td>
+<td>3</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-<td>1.457</td></tr></table><br />
-<p>Note: failures are anticipated and checked for with assertions while errors are unanticipated.</p><br /></div>
+<td>0</td></tr></table></div>
 <div class="section">
-<h2>Package List<a name="Package_List"></a></h2><a name="Package_List"></a>
-<p>[<a href="#Summary">Summary</a>] [<a href="#Package_List">Package List</a>] [<a href="#Test_Cases">Test Cases</a>]</p><br />
-<table border="1" class="bodyTable">
+<h2>Files<a name="Files"></a></h2>
+<table border="0" class="bodyTable">
 <tr class="a">
-<th>Package</th>
-<th>Tests</th>
-<th>Errors </th>
-<th>Failures</th>
-<th>Skipped</th>
-<th>Success Rate</th>
-<th>Time</th></tr>
-<tr class="b">
-<td><a href="#net.goldenbogen.lib.datetime">net.goldenbogen.lib.datetime</a></td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-<td>1.457</td></tr></table><br />
-<p>Note: package statistics are not computed recursively, they only sum up all of its testsuites numbers.</p>
-<div class="section">
-<h3>net.goldenbogen.lib.datetime<a name="net.goldenbogen.lib.datetime"></a></h3><a name="net.goldenbogen.lib.datetime"></a>
-<table border="1" class="bodyTable">
-<tr class="a">
-<th></th>
 <th>Class</th>
-<th>Tests</th>
-<th>Errors </th>
-<th>Failures</th>
-<th>Skipped</th>
-<th>Success Rate</th>
-<th>Time</th></tr>
+<th>Bugs</th></tr>
 <tr class="b">
-<td><a href="#net.goldenbogen.lib.datetime.MeeusSeasonsTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
-<td><a href="#net.goldenbogen.lib.datetime.MeeusSeasonsTest">MeeusSeasonsTest</a></td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-<td>1.457</td></tr></table></div><br /></div>
+<td><a href="#net.goldenbogen.lib.datetime.MeeusSeasons">net.goldenbogen.lib.datetime.MeeusSeasons</a></td>
+<td>3</td></tr></table></div><a name="net.goldenbogen.lib.datetime.MeeusSeasons"></a>
 <div class="section">
-<h2>Test Cases<a name="Test_Cases"></a></h2><a name="Test_Cases"></a>
-<p>[<a href="#Summary">Summary</a>] [<a href="#Package_List">Package List</a>] [<a href="#Test_Cases">Test Cases</a>]</p>
-<div class="section">
-<h3>MeeusSeasonsTest<a name="MeeusSeasonsTest"></a></h3><a name="net.goldenbogen.lib.datetime.MeeusSeasonsTest"></a>
-<table border="1" class="bodyTable">
+<h3>net.goldenbogen.lib.datetime.MeeusSeasons<a name="net.goldenbogen.lib.datetime.MeeusSeasons"></a></h3>
+<table border="0" class="bodyTable">
 <tr class="a">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_net.goldenbogen.lib.datetime.MeeusSeasonsTest.testGetNorthernHemisphereSeason2017"></a>testGetNorthernHemisphereSeason2017</td>
-<td>0.128</td></tr>
+<th>Bug</th>
+<th>Category</th>
+<th>Details</th>
+<th>Line</th>
+<th>Priority</th></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_net.goldenbogen.lib.datetime.MeeusSeasonsTest.testGetNorthernHemisphereSeason2016"></a>testGetNorthernHemisphereSeason2016</td>
-<td>0.143</td></tr></table></div><br /></div>
+<td>Primitive value is boxed then unboxed to perform primitive coercion in net.goldenbogen.lib.datetime.MeeusSeasons.fromJDEToUTC(double)</td>
+<td>PERFORMANCE</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#BX_BOXING_IMMEDIATELY_UNBOXED_TO_PERFORM_COERCION">BX_BOXING_IMMEDIATELY_UNBOXED_TO_PERFORM_COERCION</a></td>
+<td><a href="./xref/net/goldenbogen/lib/datetime/MeeusSeasons.html#L149">149</a></td>
+<td>Medium</td></tr>
+<tr class="a">
+<td>Integral division result cast to double or float in net.goldenbogen.lib.datetime.MeeusSeasons.fromJDEToUTC(double)</td>
+<td>STYLE</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#ICAST_IDIV_CAST_TO_DOUBLE">ICAST_IDIV_CAST_TO_DOUBLE</a></td>
+<td><a href="./xref/net/goldenbogen/lib/datetime/MeeusSeasons.html#L157">157</a></td>
+<td>Medium</td></tr>
+<tr class="b">
+<td>Useless condition: it's known that Year &gt;= 948 (0x3b4) at this point</td>
+<td>STYLE</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#UC_USELESS_CONDITION">UC_USELESS_CONDITION</a></td>
+<td><a href="./xref/net/goldenbogen/lib/datetime/MeeusSeasons.html#L269">269</a></td>
+<td>High</td></tr></table></div>
       </div>
     </div>
     <div class="clear">
